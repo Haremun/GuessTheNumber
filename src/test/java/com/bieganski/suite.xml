@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="My test suite">
+    <test name="testing">
+        <packages>
+            <package name="com.bieganski.*"/>
+        </packages>
+        <classes>
+            <class name="com.bieganski.AppTest" >
+                <parameter name="minValue" value="0"/>
+                <parameter name="maxValue" value="100"/>
+            </class>
+        </classes>
+    </test>
+</suite>
