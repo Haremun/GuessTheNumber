@@ -1,13 +1,8 @@
 package com.bieganski;
 
-class RandomNumber {
-    private int value;
+class RandomNumber extends BaseNumber {
 
     RandomNumber(int value) {
-        this.value = value;
-    }
-
-    public int getValue() {
-        return value;
+        super(value);
     }
 }
