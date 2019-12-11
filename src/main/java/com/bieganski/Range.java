@@ -7,16 +7,31 @@ class Range {
     private final int maxValue;
 
     Range(int minValue, int maxValue) {
-        this.maxValue = maxValue;
-        this.minValue = minValue;
+        if (minValue > maxValue) {
+            this.maxValue = minValue;
+            this.minValue = maxValue;
+        } else {
+            this.minValue = minValue;
+            this.maxValue = maxValue;
+        }
     }
 
     RandomNumber getRandomNumber() {
         Random random = new Random();
-        return new RandomNumber(random.nextInt(maxValue) + 1);
+        return new RandomNumber(random.nextInt(maxValue - minValue + 1) + minValue);
     }
 
-    public boolean isInRange(UserNumber userNumber) {
+    boolean isInRange(UserNumber userNumber) {
         return userNumber.getValue() <= maxValue && userNumber.getValue() >= minValue;
+    }
+
+    int getLength(){
+        return maxValue - minValue;
+    }
+
+    @Override
+    public String toString() {
+        return "minValue=" + minValue +
+                ", maxValue=" + maxValue;
     }
 }

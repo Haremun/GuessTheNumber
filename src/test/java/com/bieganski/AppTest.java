@@ -7,11 +7,14 @@ import org.testng.annotations.Test;
 @Test
 public class AppTest {
 
-    @Parameters({"minValue", "maxValue"})
-    public void testRandomNumberInRange(int minValue, int maxValue) {
-        Range range = new Range(minValue, maxValue);
+    //@Parameters({"minValue", "maxValue"})
+    public void testRandomNumberInRange() {
+//        Given
+        Range range = new Range(0, 100);
+//        When
         RandomNumber number = range.getRandomNumber();
-        Assert.assertTrue(number.getValue() <= 100 && number.getValue() > 0);
+//        Then
+        Assert.assertTrue(number.getValue() <= 100 && number.getValue() >= 0);
     }
 
     public void testUserInsertLowerValue() {
@@ -38,4 +41,9 @@ public class AppTest {
         Assert.assertEquals(Hint.CORRECT, hint);
     }
 
+    public void testDeclareTooBigNumberOfTries() {
+        Range range = new Range(0, 100);
+        Tries tries = new Tries(15, range);
+        Assert.assertEquals(5, tries.getNumberOfTries());
+    }
 }

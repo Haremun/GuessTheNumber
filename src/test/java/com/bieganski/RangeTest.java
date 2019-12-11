@@ -16,4 +16,8 @@ public class RangeTest {
         UserNumber userNumber = new UserNumber(80);
         Assert.assertTrue(range.isInRange(userNumber));
     }
+    public void testMinIsBiggerThanMax(){
+        Range range = new Range(80, 20);
+        Assert.assertEquals(range.toString(), "minValue=20, maxValue=80");
+    }
 }
