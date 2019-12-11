@@ -1,9 +1,8 @@
 package com.bieganski;
 
-public class RandomNumber {
-    private int value;
+class RandomNumber extends BaseNumber {
 
-    public RandomNumber(int value) {
-        this.value = value;
+    RandomNumber(int value) {
+        super(value);
     }
 }

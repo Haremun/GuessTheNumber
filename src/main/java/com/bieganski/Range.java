@@ -1,12 +1,22 @@
 package com.bieganski;
 
-public class Range {
+import java.util.Random;
+
+class Range {
 
     private int minValue;
     private int maxValue;
 
-    public Range(int minValue, int maxValue) {
+    Range(int minValue, int maxValue) {
         this.minValue = minValue;
         this.maxValue = maxValue;
+    }
+    boolean isInRange(UserNumber userNumber){
+        return userNumber.getValue() >= minValue && userNumber.getValue() <= maxValue;
+    }
+
+    RandomNumber getRandomNumber() {
+        Random random = new Random();
+        return new RandomNumber((maxValue - minValue + 1) + minValue);
     }
 }
