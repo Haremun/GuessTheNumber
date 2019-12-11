@@ -1,9 +1,8 @@
 package com.bieganski;
 
-public class UserNumber {
-    private int value;
+class UserNumber extends BaseNumber {
 
-    public UserNumber(int value) {
-        this.value = value;
+    UserNumber(int value) {
+        super(value);
     }
 }
