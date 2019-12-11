@@ -1,7 +1,7 @@
 package com.bieganski;
 
 class BaseNumber implements Comparable<BaseNumber> {
-    private int value;
+    private final int value;
 
     BaseNumber(int value) {
         this.value = value;

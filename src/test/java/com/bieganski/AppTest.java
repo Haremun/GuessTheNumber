@@ -1,7 +1,6 @@
 package com.bieganski;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -16,26 +15,27 @@ public class AppTest {
     }
 
     public void testUserInsertLowerValue() {
-        UI Ui = new UI();
-        UserNumber userNumber = Ui.getUserInput();
+        //UI Ui = new UI();
+        UserNumber userNumber = new UserNumber(50);
         RandomNumber randomNumber = new RandomNumber(userNumber.getValue() + 1);
         Hint hint = Hint.get(userNumber.compareTo(randomNumber));
         Assert.assertEquals(Hint.TOO_LOW, hint);
     }
 
     public void testUserInsertHigherValue() {
-        UI Ui = new UI();
-        UserNumber userNumber = Ui.getUserInput();
+        //UI Ui = new UI();
+        UserNumber userNumber = new UserNumber(50);
         RandomNumber randomNumber = new RandomNumber(userNumber.getValue() - 1);
         Hint hint = Hint.get(userNumber.compareTo(randomNumber));
         Assert.assertEquals(Hint.TOO_HIGH, hint);
     }
 
     public void testUserInsertCorrectValue() {
-        UI Ui = new UI();
-        UserNumber userNumber = Ui.getUserInput();
+        //UI Ui = new UI();
+        UserNumber userNumber = new UserNumber(50);
         RandomNumber randomNumber = new RandomNumber(userNumber.getValue());
         Hint hint = Hint.get(userNumber.compareTo(randomNumber));
         Assert.assertEquals(Hint.CORRECT, hint);
     }
+
 }

@@ -3,8 +3,8 @@ package com.bieganski;
 import java.util.Random;
 
 class Range {
-    private int minValue;
-    private int maxValue;
+    private final int minValue;
+    private final int maxValue;
 
     Range(int minValue, int maxValue) {
         this.maxValue = maxValue;
@@ -14,5 +14,9 @@ class Range {
     RandomNumber getRandomNumber() {
         Random random = new Random();
         return new RandomNumber(random.nextInt(maxValue) + 1);
+    }
+
+    public boolean isInRange(UserNumber userNumber) {
+        return userNumber.getValue() <= maxValue && userNumber.getValue() >= minValue;
     }
 }
