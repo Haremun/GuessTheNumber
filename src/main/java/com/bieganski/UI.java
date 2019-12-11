@@ -16,7 +16,6 @@ class UI {
 
     void show(String message) {
         out.println(message);
-
     }
 
     UserNumber askUserForNumber() {

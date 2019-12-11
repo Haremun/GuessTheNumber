@@ -20,4 +20,11 @@ public class RangeTest {
         Range range = new Range(80, 20);
         Assert.assertEquals(range.toString(), "minValue=20, maxValue=80");
     }
+
+    public void testRangeLength() {
+        Range range1 = new Range(1, 100);
+        Range range2 = new Range(-50, -1);
+        Assert.assertEquals(range1.getLength(), 100);
+        Assert.assertEquals(range2.getLength(), 50);
+    }
 }

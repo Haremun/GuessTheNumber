@@ -25,8 +25,8 @@ class Range {
         return userNumber.getValue() <= maxValue && userNumber.getValue() >= minValue;
     }
 
-    int getLength(){
-        return maxValue - minValue;
+    int getLength() {
+        return Math.abs(maxValue - minValue) + 1;
     }
 
     @Override
