@@ -17,6 +17,6 @@ class Range {
 
     RandomNumber getRandomNumber() {
         Random random = new Random();
-        return new RandomNumber((maxValue - minValue + 1) + minValue);
+        return new RandomNumber(random.nextInt(maxValue - minValue + 1) + minValue);
     }
 }
