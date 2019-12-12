@@ -7,18 +7,17 @@ class Game implements Runnable {
         ui.show("Guess the number!");
         Range range = ui.askUserForRange();
         Tries tries = ui.askUserForTries();
-        int rounds = tries.calculateUserTries(range);
+        int rounds = tries.calculateUserTries(range.getLength());
         RandomNumber randomNumber = range.getRandomNumber();
         UserNumber userNumber = null;
-        Hint hint = null;
 
         while (rounds > 0) {
             ui.show("Number: ");
             userNumber = ui.askUserForNumber();
             if (range.isInRange(userNumber)) {
-                hint = Hint.get(userNumber.compareTo(randomNumber));
+                Hint hint = Hint.get(userNumber.compareTo(randomNumber));
                 ui.show(hint.toString());
-                if (userNumber.equals(randomNumber)) {
+                if (userNumber.compareTo(randomNumber) == 0) {
                     break;
                 }
             } else {

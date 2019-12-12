@@ -9,7 +9,7 @@ public class BaseNumberTest {
     public void testEquality() {
         BaseNumber first = new BaseNumber(44);
         BaseNumber second = new BaseNumber(44);
-        assertEquals(first, second);
+        assertTrue(first.equals(second));
     }
 
     public void testComparison() {

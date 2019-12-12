@@ -5,10 +5,10 @@
             <package name="com.bieganski.*"/>
         </packages>
         <classes>
-            <class name="com.bieganski.AppTest" >
-                <parameter name="minValue" value="0"/>
-                <parameter name="maxValue" value="100"/>
-            </class>
+            <class name="com.bieganski.BaseNumberTest"/>
+            <class name="com.bieganski.HintTest"/>
+            <class name="com.bieganski.RangeTest"/>
+            <class name="com.bieganski.TriesTest"/>
         </classes>
     </test>
 </suite>

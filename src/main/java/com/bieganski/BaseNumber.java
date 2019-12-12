@@ -15,8 +15,7 @@ class BaseNumber implements Comparable<BaseNumber> {
 
     @Override
     public int compareTo(BaseNumber o) {
-        int oValue = o.value;
-        return Integer.compare(value, oValue);
+        return Integer.compare(value, o.value);
     }
 
     @Override

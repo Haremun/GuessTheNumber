@@ -1,15 +1,12 @@
 package com.bieganski;
 
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 @Test
-public class AppTest {
-
+public class HintTest {
 
     public void testUserInsertLowerValue() {
-        //UI Ui = new UI();
         UserNumber userNumber = new UserNumber(50);
         RandomNumber randomNumber = new RandomNumber(userNumber.getValue() + 1);
         Hint hint = Hint.get(userNumber.compareTo(randomNumber));
@@ -17,7 +14,6 @@ public class AppTest {
     }
 
     public void testUserInsertHigherValue() {
-        //UI Ui = new UI();
         UserNumber userNumber = new UserNumber(50);
         RandomNumber randomNumber = new RandomNumber(userNumber.getValue() - 1);
         Hint hint = Hint.get(userNumber.compareTo(randomNumber));
@@ -25,16 +21,10 @@ public class AppTest {
     }
 
     public void testUserInsertCorrectValue() {
-        //UI Ui = new UI();
         UserNumber userNumber = new UserNumber(50);
         RandomNumber randomNumber = new RandomNumber(userNumber.getValue());
         Hint hint = Hint.get(userNumber.compareTo(randomNumber));
         Assert.assertEquals(Hint.CORRECT, hint);
     }
 
-    public void testDeclareTooBigNumberOfTries() {
-        Range range = new Range(0, 100);
-        Tries tries = new Tries(15);
-        Assert.assertEquals(5, tries.calculateUserTries(range));
-    }
 }
