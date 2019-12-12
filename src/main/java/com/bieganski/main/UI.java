@@ -1,4 +1,4 @@
-package com.bieganski;
+package com.bieganski.main;
 
 import java.io.InputStream;
 import java.io.PrintStream;

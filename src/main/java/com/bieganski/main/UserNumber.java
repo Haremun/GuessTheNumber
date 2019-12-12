@@ -1,4 +1,4 @@
-package com.bieganski;
+package com.bieganski.main;
 
 class UserNumber extends BaseNumber {
 
