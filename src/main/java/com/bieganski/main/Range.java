@@ -11,8 +11,13 @@ class Range {
         this.minValue = Math.min(minValue, maxValue);
         this.maxValue = Math.max(minValue, maxValue);
     }
-    boolean isInRange(UserNumber userNumber){
+
+    boolean isInRange(UserNumber userNumber) {
         return userNumber.getValue() >= minValue && userNumber.getValue() <= maxValue;
+    }
+
+    int getLength() {
+        return Math.abs(maxValue - minValue);
     }
 
     RandomNumber getRandomNumber() {
