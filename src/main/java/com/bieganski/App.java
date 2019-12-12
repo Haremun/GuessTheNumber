@@ -1,14 +1,15 @@
 package com.bieganski;
 
+import com.bieganski.main.Game;
+
 /**
- * Hello world!
+ * Main class to start the game
  *
  */
 public class App 
 {
     public static void main( String[] args )
     {
-        Game game = new Game();
-        game.run();
+        new Game().run();
     }
 }

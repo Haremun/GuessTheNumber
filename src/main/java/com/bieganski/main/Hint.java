@@ -1,4 +1,4 @@
-package com.bieganski;
+package com.bieganski.main;
 
 public enum Hint {
     TOO_LOW, TOO_HIGH, CORRECT;
