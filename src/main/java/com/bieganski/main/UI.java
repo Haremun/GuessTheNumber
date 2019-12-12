@@ -5,11 +5,11 @@ import java.io.PrintStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class UI {
-    InputStream in;
-    PrintStream out;
+class UI {
+    private InputStream in;
+    private PrintStream out;
 
-    public UI(InputStream in, PrintStream out) {
+    UI(InputStream in, PrintStream out) {
         this.in = in;
         this.out = out;
     }
@@ -22,12 +22,17 @@ public class UI {
         return new Range(min, max);
     }
 
+    Tries askUserForTries() {
+        show("Enter number of tries:");
+        return new Tries(getNumber());
+    }
+
     UserNumber askUserForNumber() {
         return new UserNumber(getNumber());
     }
 
     void show(String message) {
-        System.out.println(message);
+        out.println(message);
     }
 
     private int getNumber() {
@@ -40,4 +45,6 @@ public class UI {
             }
         }
     }
+
+
 }
