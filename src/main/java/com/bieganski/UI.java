@@ -8,10 +8,12 @@ import java.util.Scanner;
 class UI {
     private PrintStream out;
     private InputStream in;
+    private Scanner scanner;
 
     UI(PrintStream out, InputStream in) {
         this.out = out;
         this.in = in;
+        scanner = new Scanner(System.in);
     }
 
     void show(String message) {
@@ -30,10 +32,15 @@ class UI {
         return new Range(minValue, maxValue);
     }
 
+    Tries askUserForTries() {
+        show("Number of tries:");
+        int tries = getNumber();
+        return new Tries(tries);
+    }
+
     private int getNumber() {
         while (true) {
             try {
-                Scanner scanner = new Scanner(in);
                 return scanner.nextInt();
             } catch (InputMismatchException ex) {
                 System.err.println(ex.getMessage());

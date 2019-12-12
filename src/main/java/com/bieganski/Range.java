@@ -21,7 +21,7 @@ class Range {
         return new RandomNumber(random.nextInt(maxValue - minValue + 1) + minValue);
     }
 
-    boolean isInRange(UserNumber userNumber) {
+    boolean isInRange(BaseNumber userNumber) {
         return userNumber.getValue() <= maxValue && userNumber.getValue() >= minValue;
     }
 

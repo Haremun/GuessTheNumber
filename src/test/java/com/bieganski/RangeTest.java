@@ -27,4 +27,11 @@ public class RangeTest {
         Assert.assertEquals(range1.getLength(), 100);
         Assert.assertEquals(range2.getLength(), 50);
     }
+
+    public void testRandomNumberInRange() {
+        Range range = new Range(0, 100);
+        RandomNumber number = range.getRandomNumber();
+        Assert.assertTrue(range.isInRange(number));
+    }
+
 }

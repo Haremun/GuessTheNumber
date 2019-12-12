@@ -1,5 +1,7 @@
 package com.bieganski;
 
+import java.util.Objects;
+
 class BaseNumber implements Comparable<BaseNumber> {
     private final int value;
 
@@ -15,5 +17,22 @@ class BaseNumber implements Comparable<BaseNumber> {
     public int compareTo(BaseNumber o) {
         int oValue = o.value;
         return Integer.compare(value, oValue);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        BaseNumber that = (BaseNumber) o;
+        return value == that.value;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
     }
 }
